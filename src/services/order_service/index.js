@@ -3,7 +3,7 @@ const apiRequester = require('src/services/api_requester')
 
 const place = async ctx => {
   const request = new PlaceOrderRequest(ctx.request.body)
-  ctx.body = await apiRequester.send(request)
+  ctx.body = await apiRequester.send(request, ctx.request.headers['is-test'])
 }
 
 module.exports = {

@@ -3,7 +3,7 @@ const Base = require('./$base')
 class Request extends Base {
   constructor(body) {
     super()
-    this.body = body
+    this._body = body
   }
   get method() {
     return 'POST'
@@ -12,7 +12,7 @@ class Request extends Base {
     return 'orders/place'
   }
   get body() {
-    return this.body
+    return this._body
   }
 }
 
