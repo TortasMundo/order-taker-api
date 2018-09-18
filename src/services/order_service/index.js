@@ -1,13 +1,9 @@
-
+const PlaceOrderRequest = require('src/services/requests/ordering-service/place_order')
+const apiRequester = require('src/services/api_requester')
 
 const place = async ctx => {
-  return [{
-    id: 1,
-    jamon: 0,
-    lomo: 2,
-    especial: 0,
-    refresco: 1
-  }]
+  const request = new PlaceOrderRequest(ctx.request.body)
+  ctx.body = await apiRequester.send(request)
 }
 
 module.exports = {
