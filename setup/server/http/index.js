@@ -1,4 +1,5 @@
 const Koa = require('koa')
+const cors = require('koa-cors')
 const Router = require('koa-router')
 const app = new Koa()
 const router = Router()
@@ -19,6 +20,7 @@ class HttpServer {
       ctx.knex = config.getKnex(ctx.request.headers['is-test'])
       return await next()
     })
+    app.use(cors({ origin: true }))
     app.use(bodyParser())
   }
   start(socketServer) {
