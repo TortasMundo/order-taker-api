@@ -8,4 +8,11 @@ module.exports = [
       ctx.body = await orderService.place(ctx)
     },
   },
+  {
+    method: 'post',
+    path: '/orders/update_quantities',
+    action: async ctx => {
+      ctx.body = await orderService.updateQuantities(ctx)
+    },
+  },
 ]
