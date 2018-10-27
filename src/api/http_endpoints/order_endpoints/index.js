@@ -10,9 +10,9 @@ module.exports = [
   },
   {
     method: 'post',
-    path: '/orders/update_quantities',
+    path: '/orders/update',
     action: async ctx => {
-      ctx.body = await orderService.updateQuantities(ctx)
+      ctx.body = await orderService.update(ctx)
     },
   },
   {

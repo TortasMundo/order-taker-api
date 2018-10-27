@@ -9,7 +9,7 @@ class Request extends Base {
     return 'POST'
   }
   get path() {
-    return 'orders/update_quantities'
+    return 'orders/update'
   }
   get body() {
     return this._body

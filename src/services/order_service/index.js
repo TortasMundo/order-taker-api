@@ -1,5 +1,5 @@
 const PlaceOrderRequest = require('src/services/requests/ordering-service/place_order')
-const UpdateOrderQuantitiesRequest = require('src/services/requests/ordering-service/update_quantities')
+const UpdateOrderRequest = require('src/services/requests/ordering-service/update')
 const ListOrdersRequest = require('src/services/requests/ordering-service/list_orders')
 const apiRequester = require('src/services/api_requester')
 
@@ -8,8 +8,8 @@ const place = async ctx => {
   return await apiRequester.send(request, ctx.request.headers)
 }
 
-const updateQuantities = async ctx => {
-  const request = new UpdateOrderQuantitiesRequest(ctx.request.body)
+const update = async ctx => {
+  const request = new UpdateOrderRequest(ctx.request.body)
   return await apiRequester.send(request, ctx.request.headers)
 }
 
@@ -20,6 +20,6 @@ const list = async ctx => {
 
 module.exports = {
   place,
-  updateQuantities,
+  update,
   list,
 }
