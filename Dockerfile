@@ -12,5 +12,5 @@ RUN cp -a /tmp/node_modules /var/app/
 
 RUN npm install -g nodemon
 
-EXPOSE 4001
+EXPOSE 5001
 CMD [ "npm", "start" ]
